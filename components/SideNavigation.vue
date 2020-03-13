@@ -9,6 +9,7 @@
         mdi-menu
       </v-icon>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <nuxt-link :to="localePath('/')" class="SideNavigation-HeadingLink">
         <div class="SideNavigation-Logo">
           <img src="/logo.svg" :alt="$t('東京都')" />
@@ -16,6 +17,8 @@
         <h1 class="SideNavigation-Heading">
           {{ $t('新型コロナウイルス感染症') }}<br />{{ $t('対策サイト') }}
 =======
+=======
+>>>>>>> parent of 67a73be... アクセシビリティの改善
       <nuxt-link to="/" class="SideNavigation-HeadingLink">
         <div class="SideNavigation-Logo">
           <img src="/logo.svg" :alt="$t('Tokyo')" />
