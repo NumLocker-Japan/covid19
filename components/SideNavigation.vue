@@ -20,10 +20,10 @@
 =======
 >>>>>>> parent of 67a73be... アクセシビリティの改善
       <nuxt-link to="/" class="SideNavigation-HeadingLink">
-        <div class="SideNavigation-Logo">
+        <h1 class="SideNavigation-Heading">
+          <div class="SideNavigation-Logo">
           <img src="/logo.svg" :alt="$t('Tokyo')" />
         </div>
-        <h1 class="SideNavigation-Heading">
           {{ $t('COVID-19') }}<br />{{ $t('Measures site') }}
 >>>>>>> parent of 67a73be... アクセシビリティの改善
         </h1>
@@ -338,7 +338,7 @@ export default {
     padding: 2px 20px;
   }
   &-Logo {
-    margin: 20px 16px 0 0;
+    margin: 5px 16px 15px 0;
     width: 110px;
     @include lessThan($small) {
       margin-top: 0;
