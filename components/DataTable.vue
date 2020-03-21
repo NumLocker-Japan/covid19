@@ -26,8 +26,6 @@
   </data-view>
 </template>
 
-<i18n src="./DataTable.i18n.json"></i18n>
-
 <style lang="scss">
 .cardTable {
   &.v-data-table {
@@ -38,26 +36,32 @@
       white-space: nowrap;
       color: $gray-2;
       font-size: 12px;
+
       &.text-center {
         text-align: center;
       }
     }
+
     tbody {
       tr {
         color: $gray-1;
+
         td {
           padding: 8px 10px;
           height: auto;
           font-size: 12px;
+
           &.text-center {
             text-align: center;
           }
         }
+
         &:nth-child(odd) {
           td {
             background: rgba($gray-4, 0.3);
           }
         }
+
         &:not(:last-child) {
           td:not(.v-data-table__mobile-row) {
             border: none;
@@ -65,20 +69,25 @@
         }
       }
     }
+    &:focus {
+      outline: dotted $gray-3 1px;
+    }
   }
 }
+
 .note {
   padding: 8px;
   font-size: 12px;
-  color: #808080;
+  color: $gray-3;
 }
 </style>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 
-export default {
+export default Vue.extend({
   components: { DataView, DataViewBasicInfoPanel },
   props: {
     title: {
@@ -99,14 +108,18 @@ export default {
     },
     info: {
       type: Object,
-      required: false,
       default: () => {}
     },
     url: {
       type: String,
-      required: false,
       default: ''
     }
+  },
+  mounted() {
+    const elementList = document.querySelectorAll('.sortable span')
+    elementList.forEach(element => {
+      element.setAttribute('tabindex', '0')
+    })
   }
-}
+})
 </script>

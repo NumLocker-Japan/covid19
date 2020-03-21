@@ -1,6 +1,11 @@
 <template>
   <div :class="$style.FlowPcHospitalized">
     <p :class="$style.FlowPcHospitalizedHeading">
+      <img
+        :class="$style.FlowPcHospitalizedHeadingIcon"
+        src="/flow/hotel-24px.svg"
+        aria-hidden="true"
+      />
       {{ $t('入院となります') }}
     </p>
     <p :class="$style.FlowPcHospitalizedsubHeading">
@@ -9,8 +14,6 @@
   </div>
 </template>
 
-<i18n src="./FlowPcHospitalized.i18n.json"></i18n>
-
 <style module lang="scss">
 .FlowPcHospitalized {
   display: flex;
@@ -18,6 +21,7 @@
   align-items: center;
   padding: 30px 15px 30px 20px;
   color: $gray-2;
+
   @include card-container();
 
   &Heading {
@@ -27,18 +31,17 @@
     margin: 0 !important;
     padding: 0 5px 0 0;
 
-    &::before {
+    &Icon {
       min-width: 30px;
       min-height: 30px;
-      content: '';
       display: block;
-      background: url('/flow/hotel-24px.svg') no-repeat;
       margin-right: 10px;
     }
   }
 
   &subHeading {
     @include font-size(20);
+
     margin: 0 !important;
   }
 }
